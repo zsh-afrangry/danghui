@@ -6,7 +6,7 @@
       
       <!-- 顶部横幅（占位图做纹理背景） -->
       <div class="dataviz-hero reveal-on-scroll">
-        <div class="hero-bg" style="background-image: url('/images/image1.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('/FHSJX/images/image2.jpg')"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <div class="hero-title">无川不成军 · 大后方之柱</div>
@@ -16,7 +16,7 @@
       
       <div class="charts-grid">
         <!-- 川军参战统计 -->
-        <div class="chart-card">
+        <div class="chart-card is-interactive" @click="openNarrative(7)">
           <h3 class="chart-title">川军出征统计</h3>
           <div class="chart-container">
             <div class="bar-chart">
@@ -43,7 +43,7 @@
         </div>
 
         <!-- 大后方贡献饼图 -->
-        <div class="chart-card">
+        <div class="chart-card is-interactive" @click="openNarrative(8)">
           <h3 class="chart-title">大后方资源贡献</h3>
           <div class="chart-container">
             <div class="pie-chart">
@@ -77,25 +77,36 @@
         </div>
 
         <!-- 环形占比图：税收、军粮、工厂内迁 -->
-        <div class="chart-card">
-          <h3 class="chart-title">关键占比一览</h3>
-          <div class="rings-grid">
-            <div v-for="(ring, idx) in rings" :key="idx" class="ring-item reveal-on-scroll" :style="{ '--percent': ring.value + '%', '--color': ring.color }">
-              <div class="ring-visual">
-                <div class="ring-core"></div>
-                <div class="ring-progress"></div>
-                <div class="ring-label">
-                  <div class="ring-value">{{ ring.value }}<span class="ring-unit">{{ ring.unit }}</span></div>
-                  <div class="ring-title">{{ ring.title }}</div>
+        <div class="chart-card full-width">
+          <h3 class="chart-title">关键领域贡献</h3>
+          <div class="narratives-grid">
+            <div 
+              class="narrative-card is-ring-card reveal-on-scroll" 
+              v-for="(narrative, index) in narrativeDetails.slice(4, 7)"
+              :key="narrative.key"
+              @click="openNarrative(index + 4)"
+            >
+              <div class="narrative-content ring-card-content">
+                <div class="ring-item" :style="{ '--percent': narrative.ring.value + '%', '--color': narrative.ring.color }">
+                    <div class="ring-visual">
+                      <div class="ring-core"></div>
+                      <div class="ring-progress"></div>
+                      <div class="ring-label">
+                        <div class="ring-value">{{ narrative.ring.value }}<span class="ring-unit">{{ narrative.ring.unit }}</span></div>
+                        <div class="ring-title">{{ narrative.ring.title }}</div>
+                      </div>
+                    </div>
                 </div>
+                <ul class="narrative-list">
+                  <li v-for="(item, i) in narrative.summary" :key="i">{{ item }}</li>
+                </ul>
               </div>
-              <div class="ring-desc">{{ ring.desc }}</div>
             </div>
           </div>
         </div>
 
         <!-- 文化与教育中心指数（雷达图） -->
-        <div class="chart-card">
+        <div class="chart-card is-interactive" @click="openNarrative(9)">
           <h3 class="chart-title">文化与教育中心指数</h3>
           <div class="chart-container">
             <div class="radar-chart reveal-on-scroll">
@@ -136,8 +147,9 @@
               :key="m.label" 
               class="stat-item reveal-on-scroll"
               :style="{ '--shadow': m.color }"
+               @click="openNarrativeByKey(m.key)"
             >
-              <img class="stat-icon" src="/images/image1.jpg" alt="icon" />
+              <img class="stat-icon" :src="m.icon" alt="icon" />
               <div class="stat-number counter">
                 {{ displayValue(m.current, m.decimals) }}<span class="stat-suffix">{{ m.suffix }}</span>
               </div>
@@ -152,7 +164,7 @@
           <h3 class="chart-title">数据背后的故事</h3>
           <div class="narratives-grid">
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(0)">
-              <div class="narrative-media" style="background-image: url('/images/image1.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('/FHSJX/images/image3.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">无川不成军</div>
                 <ul class="narrative-list">
@@ -163,7 +175,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(1)">
-              <div class="narrative-media" style="background-image: url('/images/image1.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('/FHSJX/images/image6.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">大后方的基石</div>
                 <ul class="narrative-list">
@@ -174,7 +186,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(2)">
-              <div class="narrative-media" style="background-image: url('/images/image1.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('/FHSJX/images/image5.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">民力的总动员</div>
                 <ul class="narrative-list">
@@ -185,7 +197,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(3)">
-              <div class="narrative-media" style="background-image: url('/images/image1.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('/FHSJX/images/image4.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">精神的堡垒</div>
                 <ul class="narrative-list">
@@ -195,6 +207,14 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- 新增：战时物价指数折线图 -->
+        <div class="chart-card full-width is-interactive" @click="openNarrative(10)">
+          <h3 class="chart-title">战时物价指数变化</h3>
+          <div class="chart-container line-chart-container">
+            <canvas id="priceIndexChart"></canvas>
           </div>
         </div>
 
@@ -223,6 +243,9 @@
 </template>
 
 <script>
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 export default {
   name: 'DataViz',
   data() {
@@ -234,15 +257,10 @@ export default {
         { label: '其他', percentage: 12, color: '#2ecc71' }
       ],
       keyMetrics: [
-        { value: 340, decimals: 0, suffix: '万+', label: '出川抗战人数', desc: '占全国出征近五分之一', current: 0, color: 'rgba(231, 76, 60, 0.5)' },
-        { value: 64.6, decimals: 1, suffix: '万', label: '川军伤亡', desc: '阵亡26.4万 负伤35.6万 失踪2.6万', current: 0, color: 'rgba(52, 152, 219, 0.5)' },
-        { value: 38, decimals: 0, suffix: '%', label: '1944年军粮占比', desc: '当年四川负担全国军粮的38%', current: 0, color: 'rgba(243, 156, 18, 0.5)' },
-        { value: 70, decimals: 0, suffix: '%', label: '工厂内迁四川', desc: '全国70%+工厂内迁至四川', current: 0, color: 'rgba(46, 204, 113, 0.5)' }
-      ],
-      rings: [
-        { title: '战时税收占比', value: 30, unit: '%', color: '#e74c3c', desc: '四川上缴税收占战时总收入30%+，峰值约50%' },
-        { title: '军粮负担占比', value: 38, unit: '%', color: '#f39c12', desc: '最困难时期承担全国军粮的38%' },
-        { title: '工厂内迁比例', value: 70, unit: '%', color: '#3498db', desc: '全国70%以上工厂内迁四川' }
+        { value: 340, decimals: 0, suffix: '万+', label: '出川抗战人数', desc: '占全国出征近五分之一', current: 0, color: 'rgba(231, 76, 60, 0.5)', icon: '/FHSJX/images/image3.jpg', key: 'army' },
+        { value: 64.6, decimals: 1, suffix: '万', label: '川军伤亡', desc: '阵亡26.4万 负伤35.6万 失踪2.6万', current: 0, color: 'rgba(52, 152, 219, 0.5)', icon: '/FHSJX/images/image7.jpg', key: 'army' },
+        { value: 38, decimals: 0, suffix: '%', label: '1944年军粮占比', desc: '当年四川负担全国军粮的38%', current: 0, color: 'rgba(243, 156, 18, 0.5)', icon: '/SJKB/images/image6.png', key: 'food' },
+        { value: 70, decimals: 0, suffix: '%', label: '工厂内迁四川', desc: '全国70%+工厂内迁至四川', current: 0, color: 'rgba(46, 204, 113, 0.5)', icon: '/FHSJX/images/image4.jpg', key: 'industry_migration' }
       ],
       hasAnimatedCounters: false,
       activeNarrative: null,
@@ -251,7 +269,7 @@ export default {
           key: 'army',
           title: '无川不成军',
           subtitle: '340万+出征，浴血八年',
-          image: '/images/image1.jpg',
+          image: '/FHSJX/images/image3.jpg',
           paragraphs: [
             '四川（含原西康）出川抗战 340万+，几乎参加所有大型会战，付出惨烈牺牲。',
             '“十万青年十万军”号召下，大批青年学子踊跃入伍，奔赴前线。'
@@ -266,7 +284,7 @@ export default {
           key: 'rear',
           title: '大后方的基石',
           subtitle: '财政与物资的极限支撑',
-          image: '/images/image1.jpg',
+          image: '/FHSJX/images/image6.jpg',
           paragraphs: [
             '四川承担战时财政重任，上缴税收占比30%+，峰值约50%。',
             '自贡盐业成为后方“咸脉”，支撑后方民生与军需。'
@@ -281,7 +299,7 @@ export default {
           key: 'labor',
           title: '民力的总动员',
           subtitle: '修机场、抢公路、保运输',
-          image: '/images/image1.jpg',
+          image: '/FHSJX/images/image5.jpg',
           paragraphs: [
             '民工动员 500万+ 人次，修建军用机场，维护四大生命线公路。',
             '用最原始的工具也能创造奇迹，展现人民伟力。'
@@ -296,18 +314,146 @@ export default {
           key: 'culture',
           title: '精神的堡垒',
           subtitle: '战时首都与文化火种',
-          image: '/images/image1.jpg',
+          image: '/FHSJX/images/image4.jpg',
           paragraphs: [
-            '重庆为战时首都与远东指挥中心，四川成为文化与教育中心。',
-            '面对长期轰炸，城市与人民不屈不挠，守护文明薪火。'
+            '重庆为战时首都与远东指挥中心，四川成为文化与教育中心，接纳了全国大部分内迁高校与科研机构。',
+            '面对日军“疲劳轰炸”与“无差别轰炸”，城市与人民不屈不挠，在防空洞中坚持生产、学习，守护着中华文明的薪火。'
           ],
           bullets: [
             '高校与科研机构大规模内迁',
             '文化出版坚持不断线',
             '重庆大轰炸 5年半'
           ]
+        },
+        {
+          key: 'tax',
+          title: '战时财政的支柱',
+          subtitle: '四川的税收贡献',
+          image: '/SJKB/images/image6.png',
+          paragraphs: [
+            '抗战期间，四川的财政收入成为支撑国民政府的重要来源。田赋是其中的核心，四川的田赋征收额在全国首屈一-指。',
+            '除了田赋，盐税、统税等也为战时财政作出了巨大贡献，保证了前线军费和后方政府的运转。'
+          ],
+          bullets: [
+            '1941年至1945年，四川田赋征收总额占全国40%以上。',
+            '自贡的盐税收入是抗战财政的重要补充。',
+            '为支持战争，四川人民承担了沉重的赋税负担。'
+          ],
+          ring: { title: '战时税收占比', value: 30, unit: '%', color: '#e74c3c' },
+          summary: [
+            '四川上缴税收占战时总收入30%+',
+            '峰值年份(1944年)占比接近50%',
+            '为前线提供了稳定的财政支持'
+          ]
+        },
+        {
+          key: 'food',
+          title: '维系生命的粮仓',
+          subtitle: '四川的军粮贡献',
+          image: '/FHSJX/images/dahoufangshengchanjianshe.jpg',
+          paragraphs: [
+            '作为“天府之国”，四川在抗战中扮演了全国总后方粮仓的角色。川粮外运，源源不断地补给前线和各战区。',
+            '为完成征粮任务，四川各级政府采取了多种措施，广大农民也为支援抗战做出了巨大牺牲。'
+          ],
+          bullets: [
+            '抗战八年，四川共计征收军粮超过1.4亿市石。',
+            '军粮征收量常年占全国总量的三分之一以上。',
+            '川粮的稳定供应是维系全国抗战的重要保障。'
+          ],
+          ring: { title: '军粮负担占比', value: 38, unit: '%', color: '#f39c12' },
+          summary: [
+            '最困难时期(1944年)承担全国38%军粮',
+            '征收粮食总量位居全国第一',
+            '保障了数百万军队的后勤供应'
+          ]
+        },
+        {
+          key: 'industry_migration',
+          title: '后方工业的心脏',
+          subtitle: '四川的工厂内迁与建设',
+          image: '/FHSJX/images/image6.jpg',
+          paragraphs: [
+            '抗战爆发后，东部沿海地区的工厂大规模西迁，其中绝大部分迁往四川。这不仅保存了中国的工业命脉，也奠定了四川近代工业的基础。',
+            '以重庆为中心的兵器工业基地，生产了全国三分之一以上的武器弹药，为前线作战提供了关键支持。'
+          ],
+          bullets: [
+            '迁川工厂总数超过250家，占全部内迁工厂的70%以上。',
+            '形成了以兵器、钢铁、纺织、化工为支柱的后方工业体系。',
+            '“汉阳造”步枪的主要生产线迁至重庆，成为“汉阳造”在抗战中的主力生产基地。'
+          ],
+          ring: { title: '工厂内迁比例', value: 70, unit: '%', color: '#3498db' },
+          summary: [
+            '全国70%以上的工厂内迁至四川',
+            '形成了以重庆为中心的战时工业基地',
+            '军工、纺织、化工等产业得到发展'
+          ]
+        },
+        {
+          key: 'chuanjun-stats',
+          title: '川军出征统计解读',
+          subtitle: '“无川不成军”背后的数字',
+          image: '/FHSJX/images/chuanjunchuchuan.jpg',
+          paragraphs: [
+            '川军是抗日战争中一支重要的武装力量，其参战人数之多、牺牲之惨烈，为全国之最。',
+            '“出川兵力300万+”指的是包含原西康省在内的四川地区，在八年抗战中，为前线输送的兵员总数超过300万，占全国同期征兵总额的近五分之一。',
+            '“伤亡人数64万+”是川军在各大战役中付出的巨大代价。其中阵亡26.4万，负伤35.6万，失踪2.6万。这串数字背后，是无数家庭的离散与伤痛，也是川人保家卫国的决心。'
+          ],
+          bullets: [
+            '川军健儿几乎参加了抗战期间所有大型会战。',
+            '在淞沪会战、台儿庄战役、武汉会战等战役中均有川军将士浴血奋战的身影。',
+            '川军的巨大牺牲为抗战胜利奠定了坚实的基础。'
+          ]
+        },
+        {
+          key: 'rear-contribution',
+          title: '大后方资源贡献解读',
+          subtitle: '支撑抗战的生命线',
+          image: '/FHSJX/images/dahoufangshengchanjianshe.jpg',
+          paragraphs: [
+            '作为战时中国的“大后方”，四川不仅是重要的兵源地，也是全国抗战的经济和物资供应中心。',
+            '饼图直观地展示了四川在兵员、粮食、物资等方面的核心贡献。这些资源通过川陕、川湘等生命线公路，源源不断地输送到前线。'
+          ],
+          bullets: [
+            '兵员：四川的征兵总数在全国各省中名列第一。',
+            '粮食：四川的粮食产量和征收量为全国之冠，保障了军需民食。',
+            '物资：内迁的工厂和本地的资源，为战争提供了大量的工业产品和原料。'
+          ]
+        },
+        {
+          key: 'culture-index',
+          title: '文化与教育中心指数解读',
+          subtitle: '烽火中的不灭文脉',
+          image: '/FHSJX/images/neiqiandaxuehuiju.jpg',
+          paragraphs: [
+            '抗战期间，随着大量高校、科研机构和文化团体西迁，四川（尤其是重庆和成都）成为了中国的战时文化与教育中心。',
+            '雷达图从五个维度评估了四川作为文化中心的综合指数，展示了其在保存民族文脉、培养战时人才方面不可替代的作用。'
+          ],
+          bullets: [
+            '高校内迁：超过77所高等院校迁入四川，保存了教育的火种。',
+            '科研力量：中央研究院等顶级科研机构云集，开展战时科研。',
+            '文化传承：众多文化名人在此继续创作，诞生了大量抗战文艺作品。',
+            '战时出版：重庆成为全国出版中心，思想和文化得以传播。',
+            '国际影响：作为同盟国中国战区的指挥中心，重庆是重要的国际交流舞台。'
+          ]
+        },
+        {
+          key: 'price-index',
+          title: '战时物价指数变化解读',
+          subtitle: '通货膨胀下的后方民生',
+          image: '/FHSJX/images/zhongqingdahongzhakaishi.jpg',
+          paragraphs: [
+            '抗日战争期间，由于生产萎缩、物资短缺、交通破坏以及国民政府滥发货币，后方经历了剧烈的通货膨胀，物价飞涨。',
+            '折线图（使用对数坐标）清晰地展示了物价指数从1939年开始急剧攀升的趋势。这场严重的通货膨胀给后方人民的生活带来了极大的困难，但也从一个侧面反映了战争对经济的巨大冲击。'
+          ],
+          bullets: [
+            '战争导致生产力严重破坏，物资供应紧张。',
+            '国民政府通过增发法币来弥补巨额财政赤字，是通胀的主要原因。',
+            '物价飞涨使得工薪阶层和普通民众的生活日益艰难。',
+            '尽管如此，后方人民依然以各种方式支持着前线的抗战。'
+          ]
         }
-      ]
+      ],
+      priceChart: null
     }
   },
   computed: {
@@ -409,6 +555,12 @@ export default {
       }, { threshold: 0.3 })
       counterObserver.observe(statsEl)
     }
+    this.initPriceChart();
+  },
+  beforeUnmount() {
+    if (this.priceChart) {
+      this.priceChart.destroy();
+    }
   },
   methods: {
     displayValue(val, decimals) {
@@ -433,6 +585,13 @@ export default {
       }
       requestAnimationFrame(tick)
     },
+    openNarrativeByKey(key) {
+      if (!key) return;
+      const index = this.narrativeDetails.findIndex(n => n.key === key);
+      if (index !== -1) {
+        this.openNarrative(index);
+      }
+    },
     openNarrative(index) {
       this.activeNarrative = index
       document.body.style.overflow = 'hidden'
@@ -440,6 +599,40 @@ export default {
     closeNarrative() {
       this.activeNarrative = null
       document.body.style.overflow = ''
+    },
+    initPriceChart() {
+      const ctx = document.getElementById('priceIndexChart').getContext('2d');
+      const labels = ['1937', '1938', '1939', '1940', '1941', '1942', '1943', '1944', '1945'];
+      const data = [1, 1.5, 3, 15, 35, 70, 150, 400, 1000]; // 示例数据，非精确历史数据
+
+      this.priceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: '后方城市物价指数 (以1937年为基准)',
+            data: data,
+            borderColor: '#e74c3c',
+            backgroundColor: 'rgba(231, 76, 60, 0.1)',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: false,
+              type: 'logarithmic', // 对数坐标轴以更好地显示剧烈变化
+              title: {
+                display: true,
+                text: '指数 (对数)'
+              }
+            }
+          }
+        }
+      });
     }
   }
 }
@@ -538,6 +731,10 @@ export default {
   transform: translateY(-5px);
 }
 
+.chart-card.is-interactive {
+  cursor: pointer;
+}
+
 .chart-card.full-width {
   grid-column: 1 / -1;
 }
@@ -555,6 +752,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.line-chart-container {
+  height: 300px;
+  padding: 10px;
 }
 
 /* 条形图样式 */
@@ -742,6 +944,7 @@ export default {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.6) inset;
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
+  cursor: pointer;
 }
 .stat-item::before {
   content: '';
@@ -880,6 +1083,18 @@ export default {
 }
 .narrative-list li {
   margin: 6px 0;
+}
+.ring-card-content {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+}
+
+.narrative-card.is-ring-card {
+  grid-template-rows: auto;
 }
 
 /* 滚动显隐动画 */

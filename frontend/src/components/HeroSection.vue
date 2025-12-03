@@ -2,11 +2,10 @@
   <section class="hero-section">
     <div class="hero-content">
       <div class="hero-text">
-        <h2 class="hero-title">纪念抗日战争胜利80周年</h2>
-        <p class="hero-subtitle">用技术讲好红色故事，传承抗战精神</p>
+        <h2 class="hero-title">烽火传承 数字记忆</h2>
+        <p class="hero-subtitle">纪念抗日战争胜利80周年</p>
         <p class="hero-description">
-          1937-1945，八年抗战，中华民族以血肉之躯筑成新的长城。
-          四川作为大后方，川军出川抗战，书写了可歌可泣的英雄篇章。
+          一寸山河一寸血，十万青年十万军。八十年前，中华民族面临存亡危局，无数先辈投身于伟大的抗日战争。四川，作为战略大后方，不仅是支撑全国抗战的坚实壁垒，更有三百万川军将士出川远征，以血肉之躯筑起了不倒的长城。本项目旨在通过数字化的方式，再现那段烽火岁月，铭记四川人民的卓绝贡献，传承不朽的抗战精神。
         </p>
         <button @click="startExplore" class="explore-btn">
           开始探索
@@ -23,7 +22,7 @@ export default {
   name: 'HeroSection',
   data() {
     return {
-      backgroundImage: '/images/image1.jpg'
+      backgroundImage: '/XZ/images/image1.jpg'
     }
   },
   methods: {

@@ -10,6 +10,8 @@
           <a href="#map" @click="scrollTo('map')" class="nav-link">西迁地图</a>
           <a href="#heroes" @click="scrollTo('heroes')" class="nav-link">英雄图谱</a>
           <a href="#dataviz" @click="scrollTo('dataviz')" class="nav-link">数据看板</a>
+          <a href="#news" @click="scrollTo('news')" class="nav-link">最新动态</a>
+          <a href="#resources" @click="scrollTo('resources')" class="nav-link">文献资料</a>
           <a href="#ending" @click="scrollTo('ending')" class="nav-link">结束</a>
         </nav>
       </div>
@@ -22,6 +24,8 @@
       <InteractiveMap id="map" />
       <HeroGallery id="heroes" />
       <DataViz id="dataviz" />
+      <NewsSection id="news" />
+      <ResourcesSection id="resources" />
       <EndingSection id="ending" />
     </main>
 
@@ -41,6 +45,8 @@ import InteractiveMap from './components/InteractiveMap.vue'
 import HeroGallery from './components/HeroGallery.vue'
 import DataViz from './components/DataViz.vue'
 import EndingSection from './components/EndingSection.vue'
+import NewsSection from './components/NewsSection.vue'
+import ResourcesSection from './components/ResourcesSection.vue'
 
 export default {
   name: 'App',
@@ -50,7 +56,9 @@ export default {
     InteractiveMap,
     HeroGallery,
     DataViz,
-    EndingSection
+    EndingSection,
+    NewsSection,
+    ResourcesSection
   },
   methods: {
     scrollTo(elementId) {
@@ -111,20 +119,23 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
+  white-space: nowrap;
 }
 
 .navbar {
   display: flex;
-  gap: 30px;
+  gap: 18px;
 }
 
 .nav-link {
   color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 20px;
   transition: all 0.3s ease;
   font-weight: 500;
+  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 .nav-link:hover {

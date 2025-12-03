@@ -62,7 +62,7 @@ export default {
           detail: '1937年7月7日夜，日军在卢沟桥附近演习时，借口一名士兵失踪，要求进入宛平县城搜查，被拒绝后，向宛平城和卢沟桥开火，中国守军第29军第37师第219团奋起抵抗。这标志着中国人民抗日战争全面爆发。',
           type: 'war',
           icon: '💥',
-          image: '/images/image2.jpg',
+          image: '/FHSJX/images/qiqishibian.jpg',
           isVisible: false
         },
         {
@@ -73,7 +73,18 @@ export default {
           detail: '抗战爆发后，四川各路军队响应号召，纷纷出川抗战。刘湘率川军第23集团军出川，王缵绪率第29集团军出川，孙震率第22集团军出川。川军将士怀着"男儿岂是蓬蒿物，敢笑黄巢不丈夫"的豪情，踏上了抗日救国的征程。',
           type: 'army',
           icon: '🚩',
-          image: '/images/image3.jpg',
+          image: '/FHSJX/images/chuanjunchuchuan.jpg',
+          isVisible: false
+        },
+        {
+          date: '1938年3月',
+          title: '台儿庄战役',
+          description: '川军王铭章师长壮烈殉国，为台儿庄大捷创造了条件。',
+          location: '山东滕县',
+          detail: '在台儿庄战役中，川军第22集团军第122师奉命死守滕县。师长王铭章率部与日军血战数日，全师官兵伤亡殆尽，王铭章师长壮烈殉国，为台儿庄主力部队集结赢得了宝贵时间。',
+          type: 'war',
+          icon: '💥',
+          image: '/FHSJX/images/taierzhuangzhanyi.png',
           isVisible: false
         },
         {
@@ -84,7 +95,7 @@ export default {
           detail: '抗战期间，北京大学、清华大学、南开大学等多所著名大学内迁至四川。西南联大在昆明，而复旦大学、中央大学等在重庆地区办学。这些大学的内迁，不仅保存了中华民族的文化火种，也为抗战培养了大批人才。',
           type: 'education',
           icon: '🎓',
-          image: '/images/image4.jpg',
+          image: '/FHSJX/images/neiqiandaxuehuiju.jpg',
           isVisible: false
         },
         {
@@ -95,7 +106,18 @@ export default {
           detail: '从1939年2月开始，日军对重庆进行了长达5年半的战略轰炸，出动飞机9000多架次，投弹11500多枚。重庆人民在防空洞中坚持生产和学习，展现了不屈不挠的精神。"愈炸愈强"成为重庆精神的写照。',
           type: 'war',
           icon: '💥',
-          image: '/images/image5.jpg',
+          image: '/FHSJX/images/zhongqingdahongzhakaishi.jpg',
+          isVisible: false
+        },
+        {
+          date: '1941年',
+          title: '驼峰航线开辟',
+          description: '中美两国共同开辟了从印度到中国的空中运输通道。',
+          location: '喜马拉雅山区',
+          detail: '太平洋战争爆发后，日军切断了滇缅公路。为保证国际援华物资的运输，中美两国开辟了飞越喜马拉雅山脉的“驼峰航线”。这条航线地势险峻、气候恶劣，是战争史上最悲壮的空运线之一。',
+          type: 'industry',
+          icon: '✈️',
+          image: '/FHSJX/images/tuofenghangxian.png',
           isVisible: false
         },
         {
@@ -106,7 +128,18 @@ export default {
           detail: '抗战期间，四川为前线提供了大量的人力、物力支持。据统计，四川共征兵300多万人，占全国征兵总数的1/5；提供粮食占全国征粮总数的1/3。同时，大量工厂内迁至四川，形成了重要的军工生产基地。',
           type: 'industry',
           icon: '⚙️',
-          image: '/images/image6.jpg',
+          image: '/FHSJX/images/dahoufangshengchanjianshe.jpg',
+          isVisible: false
+        },
+        {
+          date: '1944年',
+          title: '豫湘桂会战',
+          description: '川军在豫中、长衡、桂柳等地与日军展开激战。',
+          location: '河南、湖南、广西',
+          detail: '在豫湘桂会战中，多支川军部队参战，虽然战役总体失利，但川军将士在衡阳保卫战等战斗中表现英勇，付出了巨大牺牲，迟滞了日军的进攻。',
+          type: 'war',
+          icon: '💥',
+          image: '/FHSJX/images/yuxiangguihuizhan.png',
           isVisible: false
         },
         {
@@ -117,7 +150,7 @@ export default {
           detail: '1945年8月15日，日本天皇宣布无条件投降。9月2日，日本在美舰密苏里号上签署投降书。中国人民经过14年艰苦卓绝的抗战，终于取得了最终胜利。这是中华民族从近代以来抗击外敌入侵第一次取得完全胜利的伟大胜利。',
           type: 'victory',
           icon: '🏆',
-          image: '/images/image7.jpg',
+          image: '/FHSJX/images/kangzhanshengli.jpg',
           isVisible: false
         }
       ]
