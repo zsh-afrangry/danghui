@@ -3,7 +3,13 @@
     <!-- 页头导航 -->
     <header class="header">
       <div class="container">
-        <h1 class="title">烽火传承 数字记忆</h1>
+        <div class="title-wrap">
+          <h1 class="title">烽火传承 数字记忆</h1>
+          <p class="title-subtext">
+            计算机与人工智能学院“烽火忆峥嵘·青春铸担当<br />
+            ——弘扬伟大抗战精神”主题系列活动数字成果展
+          </p>
+        </div>
         <nav class="navbar">
           <a href="#hero" @click="scrollTo('hero')" class="nav-link">序章</a>
           <a href="#timeline" @click="scrollTo('timeline')" class="nav-link">烽火时间线</a>
@@ -114,12 +120,26 @@ body {
   align-items: center;
 }
 
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .title {
   color: #fff;
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
   white-space: nowrap;
+}
+
+.title-subtext {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 520px;
 }
 
 .navbar {
@@ -168,8 +188,17 @@ body {
     gap: 15px;
   }
   
+  .title-wrap {
+    align-items: center;
+    text-align: center;
+  }
+
   .title {
     font-size: 1.5rem;
+  }
+
+  .title-subtext {
+    font-size: 0.85rem;
   }
   
   .navbar {

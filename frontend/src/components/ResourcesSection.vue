@@ -1,6 +1,7 @@
 <template>
   <section class="resources-section">
-    <div class="container">
+    <!-- 列表视图 -->
+    <div v-if="!showDevelopingMessage" class="container">
       <h2 class="section-title">文献资料</h2>
       <p class="section-subtitle">深入了解抗战历史的精选文献与影像资料</p>
       <div class="resources-grid">
@@ -12,9 +13,23 @@
           </div>
           <h3 class="resource-title">{{ resource.title }}</h3>
           <p class="resource-description">{{ resource.description }}</p>
-          <a :href="resource.link" target="_blank" class="resource-link">
+          <span @click="openResource" class="resource-link">
             查看资料
-          </a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 开发中提示视图 -->
+    <div v-else class="developing-view">
+      <div class="detail-container">
+        <button class="back-btn" @click="closeResource">
+          <span class="back-arrow">←</span> 返回
+        </button>
+        
+        <div class="developing-content">
+          <h2 class="developing-title">本科第二党支部持续开发中，尚未完成</h2>
+          <p class="developing-subtitle">敬请期待...</p>
         </div>
       </div>
     </div>
@@ -26,6 +41,8 @@ export default {
   name: 'ResourcesSection',
   data() {
     return {
+      showDevelopingMessage: false,
+      scrollPosition: 0,
       resources: [
         {
           id: 1,
@@ -71,6 +88,22 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    openResource() {
+      // 保存当前滚动位置
+      this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      this.showDevelopingMessage = true
+      document.body.style.overflow = 'hidden'
+    },
+    closeResource() {
+      this.showDevelopingMessage = false
+      document.body.style.overflow = ''
+      // 恢复之前的滚动位置
+      this.$nextTick(() => {
+        window.scrollTo({ top: this.scrollPosition, behavior: 'smooth' })
+      })
+    }
   }
 }
 </script>
@@ -79,6 +112,7 @@ export default {
 .resources-section {
   padding: 80px 0;
   background-color: #fff;
+  min-height: 100vh;
 }
 .section-title {
   text-align: center;
@@ -135,8 +169,95 @@ export default {
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 .resource-link:hover {
   background-color: #c0392b;
+}
+
+/* 开发中提示视图 */
+.developing-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+  margin-bottom: 30px;
+}
+
+.back-btn:hover {
+  background: #c0392b;
+  transform: translateX(-5px);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.developing-content {
+  text-align: center;
+  padding: 120px 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.developing-title {
+  font-size: 2rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.developing-subtitle {
+  font-size: 1.2rem;
+  color: #95a5a6;
+}
+
+@media (max-width: 768px) {
+  .developing-title {
+    font-size: 1.5rem;
+  }
+  
+  .developing-subtitle {
+    font-size: 1rem;
+  }
 }
 </style>
