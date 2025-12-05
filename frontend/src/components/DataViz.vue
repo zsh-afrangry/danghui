@@ -6,7 +6,7 @@
       
       <!-- 顶部横幅（占位图做纹理背景） -->
       <div class="dataviz-hero reveal-on-scroll">
-        <div class="hero-bg" style="background-image: url('/FHSJX/images/image2.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('FHSJX/images/image2.jpg')"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <div class="hero-title">无川不成军 · 大后方之柱</div>
@@ -164,7 +164,7 @@
           <h3 class="chart-title">数据背后的故事</h3>
           <div class="narratives-grid">
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(0)">
-              <div class="narrative-media" style="background-image: url('/FHSJX/images/image3.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('FHSJX/images/image3.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">无川不成军</div>
                 <ul class="narrative-list">
@@ -175,7 +175,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(1)">
-              <div class="narrative-media" style="background-image: url('/FHSJX/images/image6.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('FHSJX/images/image6.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">大后方的基石</div>
                 <ul class="narrative-list">
@@ -186,7 +186,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(2)">
-              <div class="narrative-media" style="background-image: url('/FHSJX/images/image5.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('FHSJX/images/image5.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">民力的总动员</div>
                 <ul class="narrative-list">
@@ -197,7 +197,7 @@
               </div>
             </div>
             <div class="narrative-card reveal-on-scroll" @click="openNarrative(3)">
-              <div class="narrative-media" style="background-image: url('/FHSJX/images/image4.jpg')"></div>
+              <div class="narrative-media" style="background-image: url('FHSJX/images/image4.jpg')"></div>
               <div class="narrative-content">
                 <div class="narrative-title">精神的堡垒</div>
                 <ul class="narrative-list">
@@ -257,10 +257,10 @@ export default {
         { label: '其他', percentage: 12, color: '#2ecc71' }
       ],
       keyMetrics: [
-        { value: 340, decimals: 0, suffix: '万+', label: '出川抗战人数', desc: '占全国出征近五分之一', current: 0, color: 'rgba(231, 76, 60, 0.5)', icon: '/FHSJX/images/image3.jpg', key: 'army' },
-        { value: 64.6, decimals: 1, suffix: '万', label: '川军伤亡', desc: '阵亡26.4万 负伤35.6万 失踪2.6万', current: 0, color: 'rgba(52, 152, 219, 0.5)', icon: '/FHSJX/images/image7.jpg', key: 'army' },
-        { value: 38, decimals: 0, suffix: '%', label: '1944年军粮占比', desc: '当年四川负担全国军粮的38%', current: 0, color: 'rgba(243, 156, 18, 0.5)', icon: '/SJKB/images/image6.png', key: 'food' },
-        { value: 70, decimals: 0, suffix: '%', label: '工厂内迁四川', desc: '全国70%+工厂内迁至四川', current: 0, color: 'rgba(46, 204, 113, 0.5)', icon: '/FHSJX/images/image4.jpg', key: 'industry_migration' }
+        { value: 340, decimals: 0, suffix: '万+', label: '出川抗战人数', desc: '占全国出征近五分之一', current: 0, color: 'rgba(231, 76, 60, 0.5)', icon: 'FHSJX/images/image3.jpg', key: 'army' },
+        { value: 64.6, decimals: 1, suffix: '万', label: '川军伤亡', desc: '阵亡26.4万 负伤35.6万 失踪2.6万', current: 0, color: 'rgba(52, 152, 219, 0.5)', icon: 'FHSJX/images/image7.jpg', key: 'army' },
+        { value: 38, decimals: 0, suffix: '%', label: '1944年军粮占比', desc: '当年四川负担全国军粮的38%', current: 0, color: 'rgba(243, 156, 18, 0.5)', icon: 'SJKB/images/image6.png', key: 'food' },
+        { value: 70, decimals: 0, suffix: '%', label: '工厂内迁四川', desc: '全国70%+工厂内迁至四川', current: 0, color: 'rgba(46, 204, 113, 0.5)', icon: 'FHSJX/images/image4.jpg', key: 'industry_migration' }
       ],
       hasAnimatedCounters: false,
       activeNarrative: null,
@@ -269,7 +269,7 @@ export default {
           key: 'army',
           title: '无川不成军',
           subtitle: '340万+出征，浴血八年',
-          image: '/FHSJX/images/image3.jpg',
+          image: 'FHSJX/images/image3.jpg',
           paragraphs: [
             '四川（含原西康）出川抗战 340万+，几乎参加所有大型会战，付出惨烈牺牲。',
             '“十万青年十万军”号召下，大批青年学子踊跃入伍，奔赴前线。'
@@ -284,7 +284,7 @@ export default {
           key: 'rear',
           title: '大后方的基石',
           subtitle: '财政与物资的极限支撑',
-          image: '/FHSJX/images/image6.jpg',
+          image: 'FHSJX/images/image6.jpg',
           paragraphs: [
             '四川承担战时财政重任，上缴税收占比30%+，峰值约50%。',
             '自贡盐业成为后方“咸脉”，支撑后方民生与军需。'
@@ -299,7 +299,7 @@ export default {
           key: 'labor',
           title: '民力的总动员',
           subtitle: '修机场、抢公路、保运输',
-          image: '/FHSJX/images/image5.jpg',
+          image: 'FHSJX/images/image5.jpg',
           paragraphs: [
             '民工动员 500万+ 人次，修建军用机场，维护四大生命线公路。',
             '用最原始的工具也能创造奇迹，展现人民伟力。'
@@ -314,7 +314,7 @@ export default {
           key: 'culture',
           title: '精神的堡垒',
           subtitle: '战时首都与文化火种',
-          image: '/FHSJX/images/image4.jpg',
+          image: 'FHSJX/images/image4.jpg',
           paragraphs: [
             '重庆为战时首都与远东指挥中心，四川成为文化与教育中心，接纳了全国大部分内迁高校与科研机构。',
             '面对日军“疲劳轰炸”与“无差别轰炸”，城市与人民不屈不挠，在防空洞中坚持生产、学习，守护着中华文明的薪火。'
@@ -329,7 +329,7 @@ export default {
           key: 'tax',
           title: '战时财政的支柱',
           subtitle: '四川的税收贡献',
-          image: '/SJKB/images/image6.png',
+          image: 'SJKB/images/image6.png',
           paragraphs: [
             '抗战期间，四川的财政收入成为支撑国民政府的重要来源。田赋是其中的核心，四川的田赋征收额在全国首屈一-指。',
             '除了田赋，盐税、统税等也为战时财政作出了巨大贡献，保证了前线军费和后方政府的运转。'
@@ -350,7 +350,7 @@ export default {
           key: 'food',
           title: '维系生命的粮仓',
           subtitle: '四川的军粮贡献',
-          image: '/FHSJX/images/dahoufangshengchanjianshe.jpg',
+          image: 'FHSJX/images/dahoufangshengchanjianshe.jpg',
           paragraphs: [
             '作为“天府之国”，四川在抗战中扮演了全国总后方粮仓的角色。川粮外运，源源不断地补给前线和各战区。',
             '为完成征粮任务，四川各级政府采取了多种措施，广大农民也为支援抗战做出了巨大牺牲。'
@@ -371,7 +371,7 @@ export default {
           key: 'industry_migration',
           title: '后方工业的心脏',
           subtitle: '四川的工厂内迁与建设',
-          image: '/FHSJX/images/image6.jpg',
+          image: 'FHSJX/images/image6.jpg',
           paragraphs: [
             '抗战爆发后，东部沿海地区的工厂大规模西迁，其中绝大部分迁往四川。这不仅保存了中国的工业命脉，也奠定了四川近代工业的基础。',
             '以重庆为中心的兵器工业基地，生产了全国三分之一以上的武器弹药，为前线作战提供了关键支持。'
@@ -392,7 +392,7 @@ export default {
           key: 'chuanjun-stats',
           title: '川军出征统计解读',
           subtitle: '“无川不成军”背后的数字',
-          image: '/FHSJX/images/chuanjunchuchuan.jpg',
+          image: 'FHSJX/images/chuanjunchuchuan.jpg',
           paragraphs: [
             '川军是抗日战争中一支重要的武装力量，其参战人数之多、牺牲之惨烈，为全国之最。',
             '“出川兵力300万+”指的是包含原西康省在内的四川地区，在八年抗战中，为前线输送的兵员总数超过300万，占全国同期征兵总额的近五分之一。',
@@ -408,7 +408,7 @@ export default {
           key: 'rear-contribution',
           title: '大后方资源贡献解读',
           subtitle: '支撑抗战的生命线',
-          image: '/FHSJX/images/dahoufangshengchanjianshe.jpg',
+          image: 'FHSJX/images/dahoufangshengchanjianshe.jpg',
           paragraphs: [
             '作为战时中国的“大后方”，四川不仅是重要的兵源地，也是全国抗战的经济和物资供应中心。',
             '饼图直观地展示了四川在兵员、粮食、物资等方面的核心贡献。这些资源通过川陕、川湘等生命线公路，源源不断地输送到前线。'
@@ -423,7 +423,7 @@ export default {
           key: 'culture-index',
           title: '文化与教育中心指数解读',
           subtitle: '烽火中的不灭文脉',
-          image: '/FHSJX/images/neiqiandaxuehuiju.jpg',
+          image: 'FHSJX/images/neiqiandaxuehuiju.jpg',
           paragraphs: [
             '抗战期间，随着大量高校、科研机构和文化团体西迁，四川（尤其是重庆和成都）成为了中国的战时文化与教育中心。',
             '雷达图从五个维度评估了四川作为文化中心的综合指数，展示了其在保存民族文脉、培养战时人才方面不可替代的作用。'
@@ -440,7 +440,7 @@ export default {
           key: 'price-index',
           title: '战时物价指数变化解读',
           subtitle: '通货膨胀下的后方民生',
-          image: '/FHSJX/images/zhongqingdahongzhakaishi.jpg',
+          image: 'FHSJX/images/zhongqingdahongzhakaishi.jpg',
           paragraphs: [
             '抗日战争期间，由于生产萎缩、物资短缺、交通破坏以及国民政府滥发货币，后方经历了剧烈的通货膨胀，物价飞涨。',
             '折线图（使用对数坐标）清晰地展示了物价指数从1939年开始急剧攀升的趋势。这场严重的通货膨胀给后方人民的生活带来了极大的困难，但也从一个侧面反映了战争对经济的巨大冲击。'

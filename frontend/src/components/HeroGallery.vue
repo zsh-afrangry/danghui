@@ -59,7 +59,7 @@ export default {
           title: '集团军总司令',
           brief: '四川军阀，率川军出川抗战',
           lifespan: '1888-1938',
-          image: '/YXTP/images/Liu_Xiang.jpg',
+          image: 'YXTP/images/Liu_Xiang.jpg',
           story: '第七战区司令长官，率川军出川抗战，发表《告川康军民书》，病逝于汉口前线，留下“抗战到底，始终不渝”的遗言。',
           quote: '出川抗战，死而后已!'
         },
@@ -69,7 +69,7 @@ export default {
           title: '集团军总司令',
           brief: '率29集团军出川，坚持抗战',
           lifespan: '1885-1960',
-          image: '/YXTP/images/Wang_Zuanxu.jpg',
+          image: 'YXTP/images/Wang_Zuanxu.jpg',
           story: '第29集团军总司令，率部参加了武汉会战、鄂西会战等多次重大战役，屡建战功。',
           quote: '川军出川，为国效力，义不容辞！'
         },
@@ -79,7 +79,7 @@ export default {
           title: '集团军总司令',
           brief: '第22集团军总司令',
           lifespan: '1892-1985',
-          image: '/YXTP/images/Sun_Zhen.jpg',
+          image: 'YXTP/images/Sun_Zhen.jpg',
           story: '第22集团军总司令，在台儿庄战役中坚守滕县，为大捷创造了条件。后参与武汉会战、随枣会战等。',
           quote: '保家卫国，川军责无旁贷！'
         },
@@ -89,7 +89,7 @@ export default {
           title: '集团军总司令',
           brief: '四川军政领袖，支持抗战',
           lifespan: '1889-1964',
-          image: '/YXTP/images/Deng_Xihou.jpg',
+          image: 'YXTP/images/Deng_Xihou.jpg',
           story: '川军将领，第22集团军总司令。率部参加了太原会战、徐州会战等重要战役，坚守山西抗战前线。',
           quote: '四川子弟当为国家民族而战！'
         },
@@ -99,7 +99,7 @@ export default {
           title: '集团军总司令',
           brief: '率部参加多次重大战役',
           lifespan: '1884-1977',
-          image: '/YXTP/images/Yang_Sen.jpg',
+          image: 'YXTP/images/Yang_Sen.jpg',
           story: '第27集团军总司令，率部参加了淞沪会战、长沙会战等，以其“草鞋兵”闻名，作战勇猛。',
           quote: '宁死不屈，誓与阵地共存亡！'
         },
@@ -109,7 +109,7 @@ export default {
           title: '省主席',
           brief: '在川西地区组织抗战',
           lifespan: '1895-1976',
-          image: '/YXTP/images/Liu_Wenhui.jpg',
+          image: 'YXTP/images/Liu_Wenhui.jpg',
           story: '时任西康省主席，在后方积极组织抗战力量，整训部队，筹措军粮，为抗战胜利做出了重要贡献。',
           quote: '为民族独立而战，义无反顾！'
         },
@@ -139,7 +139,7 @@ export default {
           title: '师长',
           brief: '滕县保卫战中壮烈殉国',
           lifespan: '1893-1938',
-          image: '/FHSJX/images/taierzhuangzhanyi.png',
+          image: 'FHSJX/images/taierzhuangzhanyi.png',
           story: '在台儿庄战役的滕县保卫战中，率部死守，身中数弹，壮烈殉国。为台儿庄大捷的胜利奠定了基础。',
           quote: ''
         },

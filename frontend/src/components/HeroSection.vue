@@ -22,7 +22,7 @@ export default {
   name: 'HeroSection',
   data() {
     return {
-      backgroundImage: '/XZ/images/image1.jpg'
+      backgroundImage: 'XZ/images/image1.jpg'
     }
   },
   methods: {

@@ -57,7 +57,7 @@ export default {
           excerpt: '为纪念抗日战争胜利80周年，计算机学院本科第二党支部于今日成功举办了"烽火传承-数字记忆"主题党日活动...',
           date: '2025年12月3日',
           category: '支部活动',
-          image: '/XZ/images/image1.jpg',
+          image: 'XZ/images/image1.jpg',
           fullContent: `
             <h2>本科第二党支部开展"烽火忆峥嵘·青春铸担当"示范性主题党日活动</h2>
             
@@ -81,7 +81,7 @@ export default {
             
             <p>为响应"弘扬伟大抗战精神"的号召，支部成员于 <strong>11 月 23 日</strong> 前往国家级烈士纪念设施——<strong>成都烈士陵园</strong>开展实地研学。</p>
             
-            <img src="/images/zhutidangrihuodong/pic1.jpg" alt="支部成员在成都烈士陵园" class="article-image">
+            <img src="images/zhutidangrihuodong/pic1.jpg" alt="支部成员在成都烈士陵园" class="article-image">
             
             <p>在庄严肃穆的陵园内，大家首先驻足人民英雄纪念碑前，深切缅怀为民族独立、人民解放和国家建设牺牲的革命先烈。随后，大家走进成都烈士纪念馆，依次参观"星火初燃""铁血荣光""丰碑永驻"等主题展厅，认真聆听讲解员讲述川蜀儿女在烽火岁月里抛头颅、洒热血的壮阔历程。</p>
             
@@ -99,7 +99,7 @@ export default {
             
             <p>为进一步筑牢理想信念根基，<strong>11 月 24 日</strong>，支部开展"传承伟大抗战精神，汲取奋进力量"主题党日活动暨研讨会，全体党员齐聚一堂，围绕伟大抗战精神的时代内涵展开深入研讨。</p>
             
-            <img src="/images/zhutidangrihuodong/pic2.jpg" alt="主题党日活动现场" class="article-image">
+            <img src="images/zhutidangrihuodong/pic2.jpg" alt="主题党日活动现场" class="article-image">
             
             <p>会上，支部组织委员宋佳昊同志、宣传委员刘一鸣同志分别带领大家重温了习近平总书记关于传承红色基因、弘扬伟大民族精神的重要论述，并结合抗战历史案例，解读了伟大抗战精神的核心要义。</p>
             
@@ -119,7 +119,7 @@ export default {
           excerpt: '为深入挖掘抗战历史资源，传承弘扬伟大抗战精神，让红色记忆在数字时代焕发出新的生命力，西南交通大学计算机与人工智能学院本科第二党支部开展"烽火传承 数字记忆"三部曲...',
           date: '2025年11月28日',
           category: '支部活动',
-          image: '/images/kangzhanxinwengao/pic7.jpg',
+          image: 'images/kangzhanxinwengao/pic7.jpg',
           fullContent: `
             <h2>"烽火传承 数字记忆"三部曲</h2>
             
@@ -129,31 +129,31 @@ export default {
             
             <p>由本科第二党支部精心打造的"烽火传承 数字记忆"抗战精神宣传网站于今日正式上线运行。该网站以"数字化呈现、互动式体验、立体化传播"为特色，为广大网民搭建起一个了解抗战历史、感悟抗战精神、赓续红色血脉的重要线上平台。</p>
             
-            <img src="/images/kangzhanxinwengao/pic1.png" alt="烽火传承数字记忆网站" class="article-image">
+            <img src="images/kangzhanxinwengao/pic1.png" alt="烽火传承数字记忆网站" class="article-image">
             
             <p>伟大的抗战精神，是中国人民弥足珍贵的精神财富，是激励中国人民克服一切艰难险阻、为实现中华民族伟大复兴而奋斗的强大精神动力。在数字化浪潮席卷全球的今天，如何让厚重的抗战历史突破时空限制，走进年轻一代的生活，成为传承红色精神的重要课题。"烽火传承 数字记忆"抗战精神宣传网站的上线，正是对这一课题的积极回应与创新实践。</p>
             
-            <img src="/images/kangzhanxinwengao/pic2.png" alt="网站界面展示" class="article-image">
+            <img src="images/kangzhanxinwengao/pic2.png" alt="网站界面展示" class="article-image">
             
             <h3>二、实地研学，再续抗战精神</h3>
             
             <p>习近平总书记在大会上发表的重要讲话，深情回望烽火岁月，深刻阐释伟大抗战精神，向全体中华儿女发出了踔厉奋发、勇毅前行的时代号召。为响应号召，西南交通大学计算机与人工智能学院本科第二党支部开展了"烽火忆峥嵘·青春铸担当"党支部特色活动。</p>
             
-            <img src="/images/kangzhanxinwengao/pic3.png" alt="支部特色活动" class="article-image">
+            <img src="images/kangzhanxinwengao/pic3.png" alt="支部特色活动" class="article-image">
             
             <p>11月23日，支部成员前往成都烈士陵园进行参观研学，通过参观烈士陵园博物馆，在红色教育中感悟初心使命，传承英烈精神。</p>
             
-            <img src="/images/kangzhanxinwengao/pic4.png" alt="成都烈士陵园参观" class="article-image">
+            <img src="images/kangzhanxinwengao/pic4.png" alt="成都烈士陵园参观" class="article-image">
             
-            <img src="/images/kangzhanxinwengao/pic5.png" alt="支部成员参观学习" class="article-image">
+            <img src="images/kangzhanxinwengao/pic5.png" alt="支部成员参观学习" class="article-image">
             
             <p>成都烈士博物馆作为承载城市红色记忆的重要阵地，馆藏的每一件文物、每一幅照片、每一段文字，都生动还原了革命岁月中川蜀儿女为民族独立、人民解放和国家建设抛头颅、洒热血的壮阔历程。支部成员依次走进"星火初燃""铁血荣光""丰碑永驻"等主题展厅，认真聆听革命先烈的英勇事迹。</p>
             
-            <img src="/images/kangzhanxinwengao/pic6.png" alt="展厅参观" class="article-image">
+            <img src="images/kangzhanxinwengao/pic6.png" alt="展厅参观" class="article-image">
             
             <p>参观结束后，群众们纷纷表示，此次活动让大家在回望历史中汲取了强大的精神力量。在今后的工作和生活中，将以革命先烈为榜样，把崇敬与缅怀转化为干事创业的动力，为成都的高质量发展、为中华民族的伟大复兴贡献自己的力量。</p>
             
-            <img src="/images/kangzhanxinwengao/pic7.jpg" alt="支部成员合影" class="article-image">
+            <img src="images/kangzhanxinwengao/pic7.jpg" alt="支部成员合影" class="article-image">
             
             <h3>三、积极讨论，学习抗战精神</h3>
             
@@ -170,7 +170,7 @@ export default {
           excerpt: '我们邀请了历史系李教授为我们带来一场关于川军在抗战中历史贡献的线上讲座...',
           date: '2025年11月20日',
           category: '学术讲座',
-          image: '/FHSJX/images/image5.jpg',
+          image: 'FHSJX/images/image5.jpg',
           fullContent: `
             <div style="text-align: center; padding: 80px 20px;">
               <h2 style="font-size: 2rem; color: #7f8c8d; margin-bottom: 20px;">本科第二党支部持续开发中，尚未完成</h2>
@@ -184,7 +184,7 @@ export default {
           excerpt: '为了更好地完善本项目，我们现面向全校招募志愿者，参与资料整理、内容校对和技术开发等工作...',
           date: '2025年11月15日',
           category: '团队招募',
-          image: '/SJKB/images/image6.png',
+          image: 'SJKB/images/image6.png',
           fullContent: `
             <div style="text-align: center; padding: 80px 20px;">
               <h2 style="font-size: 2rem; color: #7f8c8d; margin-bottom: 20px;">本科第二党支部持续开发中，尚未完成</h2>
@@ -198,7 +198,7 @@ export default {
           excerpt: '我们正式启动"川军抗战口述历史"项目，希望能记录下那些珍贵的个人记忆，让历史更加鲜活。',
           date: '2025年11月10日',
           category: '特别项目',
-          image: '/FHSJX/images/image2.jpg',
+          image: 'FHSJX/images/image2.jpg',
           fullContent: `
             <div style="text-align: center; padding: 80px 20px;">
               <h2 style="font-size: 2rem; color: #7f8c8d; margin-bottom: 20px;">本科第二党支部持续开发中，尚未完成</h2>
