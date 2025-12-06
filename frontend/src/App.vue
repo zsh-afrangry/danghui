@@ -6,8 +6,8 @@
         <div class="title-wrap">
           <h1 class="title">烽火传承 数字记忆</h1>
           <p class="title-subtext">
-            计算机与人工智能学院“烽火忆峥嵘·青春铸担当<br />
-            ——弘扬伟大抗战精神”主题系列活动数字成果展
+            计算机与人工智能学院“烽火忆峥嵘·青春铸担当”<br />
+            ——“弘扬伟大抗战精神”主题系列活动数字成果展
           </p>
         </div>
         <nav class="navbar">
