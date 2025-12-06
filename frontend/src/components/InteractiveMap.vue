@@ -295,11 +295,18 @@ export default {
     initMap() {
       // 初始化地图
       this.map = new AMap.Map('amapContainer', {
-        zoom: 7,
-        center: [104.5, 30.0],
+        zoom: 5, // 调整缩放级别以更好地显示中国
+        center: [104, 35], // 设置中心点为中国大致中心
         mapStyle: 'amap://styles/grey', // 使用灰色地图作为基础
         viewMode: '2D'
-      })
+      });
+
+      // 设置地图允许显示的范围为中国
+      const chinaBounds = new AMap.Bounds(
+        [73.55, 18.15], // 西南角
+        [135.08, 53.55]  // 东北角
+      );
+      this.map.setLimitBounds(chinaBounds);
 
       // 等待地图加载完成后添加标记和路线
       this.map.on('complete', () => {
